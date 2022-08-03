@@ -101,25 +101,164 @@ public class Pra2 {
 //		for (int i = 0; i < count; i++) { //入力された数字分、繰り返す
 //			System.out.print("*");
 //		}
+//		
+//		//4-11 個数を示す数値を入力し、その個数分だけ 0 ～ 9 の数字を表示するプログラムを作成しなさい。数字は 0, 1, 2, 3, , の順に表示し、9 の次は 0 に戻るものとします。
+//		Scanner sc7 = new Scanner(System.in);
+//		System.out.println("好きな数字を入力してください");
+//		int count2 = sc7.nextInt();
+//		for (int i = 0; i < count2; i++) {
+//			System.out.print(i % 10 + ","); //%10で0,1,2,3になる
+//		}
+//		
+//		System.out.println();
+//		
+//		//4-12 数値を繰り返し入力し、合計が 100 を超えたら入力を止めて合計を表示するプログラムを作成しなさい。
+//		Scanner sc8 = new Scanner(System.in);
+//		int total = 0;
+//		System.out.println("100を超えるまで数字を入力してください");
+//		while (total <= 100) {
+//			total += sc8.nextInt();
+//		}
+//		System.out.println(total);
+//		
+//		//4-13 ストライク・カウントを数えるプログラムを作成しなさい。
+//		/*１球ごとにストライクかボールかを入力する。
+//		３ストライクまたは４ボールになったら入力を止め、ストライクとボールのカウントを表示する。
+//		※ストライクの場合は1、ボールの場合は2を入力する。*/
+//		int strike = 0;
+//		int ball = 0;
+//		Scanner sc9 = new Scanner(System.in);
+//		while (strike < 3 && ball < 4) { //strikeが3以下かつballが4以下ならブロック内を評価
+//			System.out.println("strike or ball");
+//			int count3 = sc9.nextInt();
+//			if (count3 == 1) {
+//				strike++;
+//			} else if (count3 == 2) {
+//				ball++;
+//			}
+//		}
+//		System.out.println("strike = " + strike + "," + "ball = " + ball);
+//		
+//		//4-14 前の問題に次の修正を加えなさい。
+//		/*１球ごとにストライク、ボール、ファウルの何れかを入力する。（残念ながらヒットにはなりません）
+//		ファウルの場合、２ストライクまではストライクにカウントするが、３ストライクにはならない。
+//		３ストライクまたは４ボールになったら入力を止め、ストライクとボールのカウントを表示する。*/
+//		int strike2 = 0;
+//		int ball2 = 0;
+//		Scanner sc10 = new Scanner(System.in);
+//		while (strike2 < 3 && ball2 < 4) {
+//			System.out.println("strike or ball or foul");
+//			int count4 = sc10.nextInt();
+//			if (count4 == 1) {
+//				strike2++;
+//			} else if (count4 == 2) {
+//				ball2++;
+//			} else if (count4 == 3 && strike2 < 2) { //入力された数字が3かつstrikeが2以下なら
+//				strike2++;
+//			}
+//		}
+//		System.out.println("strike = " + strike2 + " , " + "ball = " + ball2);
+//		
+//		//4-15 入力された数が素数かどうかを判定するプログラムを作成しなさい。
+//		//※判定する数は 4 以上としてよい。
+//		//素数かどうか判断　→　2からn-1までの整数で割り切れるかどうか割ればよい。
+//		Scanner sc11 = new Scanner(System.in);
+//		System.out.println("数字を入力");
+//		int prime = sc11.nextInt();
+//		for (int i = 2; i < prime; i++) { //2からprime-1まで繰り返す
+//			if (prime % i == 0) { //primeがprime-1までの数字で割り切れた場合
+//				System.out.println(prime + "は素数ではありません1");
+//				return;
+//			}
+//		}
+//		System.out.println(prime + "は素数です2");
+//		
+//		//4-16 2 以上の数値を入力し、素因数分解した結果を表示しなさい。
+//		System.out.println("2以上の数字を入力");
+//		Scanner sc12 = new Scanner(System.in);
+//		int prime2 = sc12.nextInt();
+//		//i=2は2から割るため、1<prime2は割っていったら最終的に1になるから1より大きい数字なら行う。
+//		for (int i = 2; 1 < prime2; i++) {
+//			//primeをiで割って0になるなら
+//			while (prime2 % i == 0) {
+//				System.out.print(i + " ");
+//				prime2 /= i;
+//			}
+//		}
+//		
+//		//4-17 九九表（一の段～九の段）を表示するプログラムを作成しなさい。
+//		//※System.out.printfを使用する。System.out.printf(" %2d", x );のように、%2dと記述すると表示が2桁に揃う。
+//		for (int i = 1; i <= 9; i++) {
+//			for (int j = 1; j <= 9; j++) {
+//				System.out.printf(" %d", i * j); //%dは10進数表記になる i*jの結果が
+//			}
+//			System.out.println();
+//		}
+//		
+//		//4-18 数値を繰り返して入力し、0 が入力されたら入力を止め、それまでの合計を表示するプログラムを作成しなさい。
+//		int total = 0;
+//		Scanner sc13 = new Scanner(System.in);
+//		for ( ; ; ) { //無限ループ
+//			int num = sc13.nextInt();
+//			if (num == 0) {
+//				break; //0が入力されたら終了
+//			}
+//			total += num;
+//		}
+//		System.out.println("total = " + total);
+//		
+//		//4-19 数値を繰り返して入力し、0 が入力されたら入力を止め、平均値を表示するプログラムを作成しなさい。
+//		//※最後に入力された 0 は平均に含めない。
+//		//※少なくとも 1 回は入力が行われるものとする。（最初に 0 を入力してはいけない）
+//		int total2 = 0;
+//		int count = 0;
+//		Scanner sc14 = new Scanner(System.in);
+//		for ( ; ; ) {
+//			int num = sc14.nextInt();
+//			if (num == 0) {
+//				break;
+//			}
+//			total2 += num;
+//			count++; //if分のbreakの後に記述することで最後に入力した0は平均に含まれなくなる
+//		}
+//		System.out.println("AVE = " + total2 / count);
+//		
+//		//4-20 サイズを示す数値を入力し、何等かの文字で例のような三角形を表示するプログラムを作成しなさい。
+//		Scanner sc15 = new Scanner(System.in);
+//		int size = sc15.nextInt();
+//		for (int i = 0; i < size; i++) { //入力された数分繰り返す
+//			for (int j = 0; j <= i; j++) { //繰り返し数に応じて$の出力を増やす
+//				System.out.print("$");
+//			}
+//			System.out.println();
+//		}
 		
-		//4-11 個数を示す数値を入力し、その個数分だけ 0 ～ 9 の数字を表示するプログラムを作成しなさい。数字は 0, 1, 2, 3, , の順に表示し、9 の次は 0 に戻るものとします。
-		Scanner sc7 = new Scanner(System.in);
-		System.out.println("好きな数字を入力してください");
-		int count2 = sc7.nextInt();
-		for (int i = 0; i < count2; i++) {
-			System.out.print(i % 10 + ","); //%10で0,1,2,3になる
+		//4-21 サイズを示す数値を入力し、そのサイズの×印を何等かの文字で表示するプログラムを作成しなさい。
+		Scanner sc16 = new Scanner(System.in);
+		int size2 = sc16.nextInt();
+		for (int i = 0; i < size2; i++) {
+			for (int j = 0; j < size2; j++) {
+				if (i == j || size2 - i - 1 == j) {
+					System.out.print("*");
+				} else {
+					System.out.print(" ");
+				}
+			}
+			System.out.println();
 		}
 		
-		System.out.println();
-		
-		//4-12 数値を繰り返し入力し、合計が 100 を超えたら入力を止めて合計を表示するプログラムを作成しなさい。
-		Scanner sc8 = new Scanner(System.in);
-		int total = 0;
-		System.out.println("100を超えるまで数字を入力してください");
-		while (total <= 100) {
-			total += sc8.nextInt();
+		//4-22 フィボナッチ数列を表示するプログラムを作成しなさい。最初の２つの項を 0、1 とし、1000 まで（ 1000 以下の項）を表示するものとします。
+		//フィボナッチ数列とは　→　最初の2項が1で、3項以降の項がすべて直前の2項の和になっている数列のこと。例)1,1,2,3,5,8,13,21,……
+		int n1 = 0;
+		int n2 = 1;
+		int n3 = n1 + n2;
+		while (n1 <= 1000) {
+			System.out.print(n1 + ",");
+			n1 = n2;
+			n2 = n3;
+			n3 = n1 + n2;
 		}
-		System.out.println(total);
+		
 
 	}
 }
