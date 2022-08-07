@@ -116,7 +116,7 @@ public class Pra2 {
 //		Scanner sc8 = new Scanner(System.in);
 //		int total = 0;
 //		System.out.println("100を超えるまで数字を入力してください");
-//		while (total <= 100) {
+//		while (total >= 100) {
 //			total += sc8.nextInt();
 //		}
 //		System.out.println(total);
